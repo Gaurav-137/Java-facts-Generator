@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Fun Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #fact-header {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        #new-fact-button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="fact-header"></h1>
+        <button id="new-fact-button">New Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "Java is named after coffee, not the island of Java.",
+            "Java was originally called \"Oak\" and later renamed to \"Green\" before finally becoming \"Java.\"",
+            "Java is a platform-independent language, meaning it can run on different operating systems without needing to be recompiled.",
+            "Java is object-oriented, meaning it uses objects to represent data and functionality.",
+            "Java uses a garbage collector to automatically manage memory, making it easier for developers to write code without worrying about memory leaks.",
+            "Java is a widely used language, with millions of developers worldwide.",
+            "Java is used in a wide range of applications, from web development to mobile apps to enterprise software.",
+            "Java is a strongly-typed language, meaning that variables must be declared with a specific data type.",
+            "Java is a compiled language, meaning that code is translated into machine code before it can be executed.",
+            "Java is constantly evolving, with new features and updates being released regularly."
+        ];
+
+        const factHeader = document.getElementById("fact-header");
+        const newFactButton = document.getElementById("new-fact-button");
+
+        function displayRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factHeader.textContent = facts[randomIndex];
+        }
+
+        newFactButton.addEventListener("click", displayRandomFact);
+
+        // Display a random fact on page load
+        displayRandomFact();
+    </script>
+</body>
+</html>
